@@ -1141,13 +1141,17 @@ function init() {
     if (options.controls !== false){
         create_controls(div);
     }
+    if (options.live !== false){
+        if (!LIVE) toggle_live();
+    }
     //$(div).dblclick(function (){return false;});
 }
 
 init();
 
 //a global object graph_editor is created containing all global functions
-return {
+    return {
+	toggle_live: toggle_live,
     import_from_JSON: import_from_JSON,
     export_tkz: export_tkz,
     export_sage: export_sage,
